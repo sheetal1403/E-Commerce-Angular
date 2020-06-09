@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ServerResponse } from '../../product.model';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +17,9 @@ export class HomeComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts(5).subscribe((products: {count: number, products: any}) => {
+    this.productService.getAllProducts().subscribe((products: ServerResponse) => {
       this.products = products.products;
-      console.log(this.products[0].image);
+
     });
 
   }
