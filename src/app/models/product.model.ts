@@ -6,6 +6,7 @@ export interface ProductModelServer {
   quantity: number;
   category: string;
   image: string;
+  images: string;
 }
 
 export interface ServerResponse {
