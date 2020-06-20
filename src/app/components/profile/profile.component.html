@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Your Profile</h1>
+  <div class="row profile">
+    <div class="col-md-4 text-center">
+      <img [src]="[userData.photoUrl]" alt="" style="height: 200px; width: 200px;">
+    </div>
+    <div class="col-md-8 user-info">
+      <div class="row">
+        <div class="col-md-6 text-center user-info-cell">
+          Name :
+        </div>
+        <div class="col-md-6 text-center user-info-cell">
+          {{ userData.name }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 text-center user-info-cell">
+          Email :
+        </div>
+        <div class="col-md-6 text-center user-info-cell">
+          {{ userData.email }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

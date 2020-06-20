@@ -4,13 +4,13 @@
   <div id="top-header">
     <div class="container">
       <ul class="header-links pull-left">
-        <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-        <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-        <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+        <li *ngIf = "isLoggedIn"><a href="#"><i class="fa fa-envelope-o"></i>{{ userData.email }}</a></li>
       </ul>
       <ul class="header-links pull-right">
-        <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-        <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+        <li *ngIf = "isLoggedIn"><a href="#">Welcome! {{ userData.name }}</a></li>
+        <li><a routerLink = "/profile"><i class="fa fa-user-o"></i>{{ isLoggedIn === true ? 'My Account' : 'Login'}}</a></li>
+        <li *ngIf="isLoggedIn" (click)="logout()"><a href="#"><i class="fa fa-user-o"></i>LogOut</a></li>
+
       </ul>
     </div>
   </div>
@@ -25,8 +25,8 @@
         <!-- LOGO -->
         <div class="col-md-3">
           <div class="header-logo">
-            <a href="#" class="logo">
-              <img src="../../../assets/img/logo.png" alt="">
+            <a routerLink="/" class="logo">
+              <h1>E-Cart</h1>
             </a>
           </div>
         </div>
